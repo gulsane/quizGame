@@ -21,15 +21,21 @@ const getOptions = function(questionBank, questionNumber) {
   return questionBank[questionNumber].options;
 };
 
+const getFormattedOptions = function(question, options) {
+  const formattedOptions = Object.entries(options)
+    .map(option => option.join(": "))
+    .join("\n");
+  return `${question}\n${formattedOptions}\nEnter Option:`;
+};
+
 const questionFormatter = function(questionBank, questionNumber) {
   if (questionNumber >= questionBank.length) {
     process.exit();
   }
   const question = getQuestion(questionBank, questionNumber);
-  const options = Object.entries(getOptions(questionBank, questionNumber))
-    .map(option => option.join(": "))
-    .join("\n");
-  return `${question}\n${options}\nEnter Option:`;
+  const options = getOptions(questionBank, questionNumber);
+  const formattedOptions = getFormattedOptions(question, options);
+  return formattedOptions;
 };
 
 const startQuiz = function(questionBank, contestantRecord) {
