@@ -9,11 +9,15 @@ const recordCounter = function(contestantRecord, questionBank, questionNumber) {
   stdout.write(questionFormatter(questionBank, questionNumber));
 };
 
+const getQuestion = function(questionBank, questionNumber) {
+  return questionBank[questionNumber].question;
+};
+
 const questionFormatter = function(questionBank, questionNumber) {
   if (questionNumber >= questionBank.length) {
     process.exit();
   }
-  const question = questionBank[questionNumber].question;
+  const question = getQuestion(questionBank, questionNumber);
   const options = Object.entries(questionBank[questionNumber].options)
     .map(option => option.join(": "))
     .join("\n");
