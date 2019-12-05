@@ -17,12 +17,16 @@ const getAnswer = function(questionBank, questionNumber) {
   return questionBank[questionNumber].answer;
 };
 
+const getOptions = function(questionBank, questionNumber) {
+  return questionBank[questionNumber].options;
+};
+
 const questionFormatter = function(questionBank, questionNumber) {
   if (questionNumber >= questionBank.length) {
     process.exit();
   }
   const question = getQuestion(questionBank, questionNumber);
-  const options = Object.entries(questionBank[questionNumber].options)
+  const options = Object.entries(getOptions(questionBank, questionNumber))
     .map(option => option.join(": "))
     .join("\n");
   return `${question}\n${options}\nEnter Option:`;
