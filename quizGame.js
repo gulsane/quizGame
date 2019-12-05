@@ -13,6 +13,10 @@ const getQuestion = function(questionBank, questionNumber) {
   return questionBank[questionNumber].question;
 };
 
+const getAnswer = function(questionBank, questionNumber) {
+  return questionBank[questionNumber].answer;
+};
+
 const questionFormatter = function(questionBank, questionNumber) {
   if (questionNumber >= questionBank.length) {
     process.exit();
@@ -28,7 +32,7 @@ const startQuiz = function(questionBank, contestantRecord) {
   let questionNumber = 0;
   const checkAnswer = function(userOption = "wrong") {
     clearTimeout(timeout);
-    if (userOption.trim() == questionBank[questionNumber].answer) {
+    if (userOption.trim() == getAnswer(questionBank, questionNumber)) {
       contestantRecord.correct++;
     } else {
       contestantRecord.incorrect++;
