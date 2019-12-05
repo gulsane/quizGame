@@ -2,7 +2,7 @@
   {
     "question": "What is the capital of India?",
     "options": { "a": "Dehli", "b": "Mumbai", "c": "Kolkata", "d": "Bihar" },
-    "correctAnswer": "a"
+    "answer": "a"
   },
   {
     "question": "Who is prime minister of India?",
@@ -12,12 +12,12 @@
       "c": "Bernard",
       "d": "Rajat"
     },
-    "correctAnswer": "a"
+    "answer": "a"
   },
   {
     "question": "When did Indian Cricket Team win its first World Cup?",
     "options": { "a": "1979", "b": "1983", "c": "2011", "d": "1996" },
-    "correctAnswer": "b"
+    "answer": "b"
   },
   {
     "question": "When did ISRO launch its first lunar mission?",
@@ -27,6 +27,6 @@
       "c": "07 January 2008",
       "d": "22 October 2008"
     },
-    "correctAnswer": "d"
+    "answer": "d"
   }
 ]
